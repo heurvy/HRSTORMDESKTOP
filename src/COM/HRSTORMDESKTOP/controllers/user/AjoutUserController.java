@@ -89,7 +89,7 @@ public  class AjoutUserController implements Initializable {
 
         User u1 = new User();
         u1 = imps.GetByMail(Email.getText());
-        if (u1.getId() == 0) {
+        if (u1.getId() == 0) {{
                 if ((isFullname(Nom.getText())) && (Prenom.getText().length() != 0) && (isNum(cin.getText()))
                         && (dateNaiss.getValue() != null) && (isEmailAdress(Email.getText())) && (password.getText().length() != 0)) {
                     PasswordEncryption pe = new PasswordEncryption();
@@ -98,7 +98,6 @@ public  class AjoutUserController implements Initializable {
                     UserManagedAdd.setPrenom(prenom.getText());
                     UserManagedAdd.setNom(nom.getText());
                     UserManagedAdd.setEmail(nomsociete.getText());
-                    UserManagedAdd.setCin(cin.getText());
                     UserManagedAdd.setRoles("HREMPLOYE");
                     UserManagedAdd.setEmail(Email.getText());
                     UserManagedAdd.setPassword(passwordHashed);
