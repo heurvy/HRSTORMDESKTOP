@@ -52,7 +52,7 @@ public  class AjoutUserController implements Initializable {
     @FXML
     private TextField Nom;
     @FXML
-    private TextArea NomSociete;
+    private TextArea Nomsociete;
     @FXML
     private TextField Prenom;
     @FXML
@@ -78,6 +78,10 @@ public  class AjoutUserController implements Initializable {
      * @param url
      * @param rb
      */
+        @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    }
+
 
     @FXML
     private void Ajouter(ActionEvent event) throws NoSuchAlgorithmException, NoSuchProviderException, IOException {
@@ -90,14 +94,14 @@ public  class AjoutUserController implements Initializable {
         User u1 = new User();
         u1 = imps.GetByMail(Email.getText());
         if (u1.getId() == 0) {{
-                if ((isFullname(Nom.getText())) && (Prenom.getText().length() != 0) && (isNum(cin.getText()))
+                if ((isFullname(Nom.getText())) && (Prenom.getText().length() != 0) && (Nomsociete.getText().length()!=0)
                         && (dateNaiss.getValue() != null) && (isEmailAdress(Email.getText())) && (password.getText().length() != 0)) {
                     PasswordEncryption pe = new PasswordEncryption();
                     String salt = pe.getSalt();
                     String passwordHashed = pe.Encrypt(password.getText(), salt);
-                    UserManagedAdd.setPrenom(prenom.getText());
-                    UserManagedAdd.setNom(nom.getText());
-                    UserManagedAdd.setEmail(nomsociete.getText());
+                    UserManagedAdd.setPrenom(Prenom.getText());
+                    UserManagedAdd.setNom(Nom.getText());
+                    UserManagedAdd.setEmail(Nomsociete.getText());
                     UserManagedAdd.setRoles("HREMPLOYE");
                     UserManagedAdd.setEmail(Email.getText());
                     UserManagedAdd.setPassword(passwordHashed);
@@ -114,11 +118,6 @@ public  class AjoutUserController implements Initializable {
                     alert.setContentText("Champ(s) invalide(s)");
                     alert.show();
                 }
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Ajout d'utilisateurs");
-                alert.setContentText("Cin déja utilisé!!");
-                alert.show();
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
