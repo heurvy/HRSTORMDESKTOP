@@ -416,7 +416,7 @@ public class ImpServiceUser implements IServiceUser {
         }
     }
 
-    public User GetByprenom(String prenom) {
+    public User GetByprenom(String prenom)   {
         String req = "SELECT * from `User` WHERE `prenom` = ";
         try {
             pst = dbcon.prepareStatement(req);

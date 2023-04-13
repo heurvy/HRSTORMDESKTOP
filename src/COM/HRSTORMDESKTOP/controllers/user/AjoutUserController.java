@@ -5,18 +5,11 @@
  */
 package COM.HRSTORMDESKTOP.controllers.user;
 
-import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
-import java.sql.Date;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,12 +22,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import COM.HRSTORMDESKTOP.Config;
@@ -95,7 +86,7 @@ public  class AjoutUserController implements Initializable {
         u1 = imps.GetByMail(Email.getText());
         if (u1.getId() == 0) {{
                 if ((isFullname(Nom.getText())) && (Prenom.getText().length() != 0) && (Nomsociete.getText().length()!=0)
-                        && (dateNaiss.getValue() != null) && (isEmailAdress(Email.getText())) && (password.getText().length() != 0)) {
+                     && (isEmailAdress(Email.getText())) && (password.getText().length() != 0)) {
                     PasswordEncryption pe = new PasswordEncryption();
                     String salt = pe.getSalt();
                     String passwordHashed = pe.Encrypt(password.getText(), salt);

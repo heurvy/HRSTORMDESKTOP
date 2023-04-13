@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -128,9 +128,9 @@ public class LoginController implements Initializable {
     private void redirectToLandingPage(MouseEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/LandingPage.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/LandingPage.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) EmailInput.getScene().getWindow();
             stage.setScene(c);
