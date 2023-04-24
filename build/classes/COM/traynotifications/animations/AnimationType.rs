@@ -1,0 +1,1 @@
+com.traynotifications.animations.AnimationType
