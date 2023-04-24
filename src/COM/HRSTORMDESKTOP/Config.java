@@ -7,7 +7,7 @@ package COM.HRSTORMDESKTOP;
 
 import javafx.geometry.Pos;
 import COM.HRSTORMDESKTOP.models.user.User;
-import org.controlsfx.control.Notifications;
+//import org.controlsfx.control.Notifications;
 
 /**
  *
@@ -86,13 +86,13 @@ public  class  Config {
         return MailPassword;
     }
     
-        public static void showNotification(String finalOutputDestination, String title) {
+/*        public static void showNotification(String finalOutputDestination, String title) {
     Notifications.create()
             .title(title)
             .text(finalOutputDestination)
             .position(Pos.TOP_CENTER)
             .show();
-}
+}*/
 
 
 }

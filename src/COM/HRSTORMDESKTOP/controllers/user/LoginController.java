@@ -91,11 +91,11 @@ public class LoginController implements Initializable {
 
     @FXML
     private void redirectToMainDashboard() {
-        Config.showNotification("you are logged in on the " + LocalDate.now() + " \n@ " + LocalDate.now().atTime(LocalTime.now()).getHour()
-                + ":" + LocalDate.now().atTime(LocalTime.now()).getMinute() + ":" + LocalDate.now().atTime(LocalTime.now()).getSecond(), "Welcome " + Config.UserStatic.getNom()+Config.UserStatic.getPrenom());
-        if (!Config.UserStatic.getRoles().equals("Admin")) {
-            Config.showNotification(notificationMessage, "Welcome " + Config.UserStatic.getNom()+Config.UserStatic.getPrenom());
-        }
+     //   Config.showNotification("you are logged in on the " + LocalDate.now() + " \n@ " + LocalDate.now().atTime(LocalTime.now()).getHour()
+         //       + ":" + LocalDate.now().atTime(LocalTime.now()).getMinute() + ":" + LocalDate.now().atTime(LocalTime.now()).getSecond(), "Welcome " + Config.UserStatic.getNom()+Config.UserStatic.getPrenom());
+    //    if (!Config.UserStatic.getRoles().equals("Admin")) {
+        //    Config.showNotification(notificationMessage, "Welcome " + Config.UserStatic.getNom()+Config.UserStatic.getPrenom());
+       // }
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/MainDashboard.fxml"));
