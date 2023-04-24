@@ -37,7 +37,7 @@ import COM.HRSTORMDESKTOP.utils.ResetPasswordMail;
 /**
  * FXML Controller class
  *
- * @author Achref
+ * @author Moetez
  */
 public class LoginController implements Initializable {
 

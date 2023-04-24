@@ -157,9 +157,9 @@ public  class AjoutUserController implements Initializable {
     private void redirectHome(MouseEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/MainDashboard.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/MainDashboard.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) Email.getScene().getWindow();
             stage.setScene(c);

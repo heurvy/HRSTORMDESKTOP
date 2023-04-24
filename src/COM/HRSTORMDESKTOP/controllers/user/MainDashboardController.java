@@ -28,7 +28,7 @@ import COM.HRSTORMDESKTOP.services.user.ImpServiceUser;
 /**
  * FXML Controller class
  *
- * @author Achref
+ * @author Moetez
  */
 public class MainDashboardController implements Initializable {
 
@@ -97,12 +97,12 @@ public class MainDashboardController implements Initializable {
         Parent root;
         try {
             if (Config.UserStatic.getRoles().equals("Employé")) {
-                root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/AjoutReclamation.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/AjoutReclamation.fxml"));
             } else {
-                root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/DisplayUser.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/DisplayUser.fxml"));
             }
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) WelcomeName.getScene().getWindow();
             stage.setScene(c);
@@ -115,9 +115,9 @@ public class MainDashboardController implements Initializable {
     private void redirectHome(MouseEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/MainDashboard.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/MainDashboard.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) WelcomeName.getScene().getWindow();
             stage.setScene(c);
@@ -131,9 +131,9 @@ public class MainDashboardController implements Initializable {
         //Config.UserStatic.getNomPrenom()
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/feuilletemps/ProjetViewFXML.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/feuilletemps/EvalViewFXML.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) WelcomeName.getScene().getWindow();
             stage.setScene(c);
@@ -147,9 +147,9 @@ public class MainDashboardController implements Initializable {
         Parent root;
         try {
             System.out.println("Campagne");
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/recrutement/CampagneRecrutement.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/recrutement/CampagneRecrutement.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) WelcomeName.getScene().getWindow();
             stage.setScene(c);
@@ -165,12 +165,12 @@ public class MainDashboardController implements Initializable {
 
         try {
             if (Config.UserStatic.getRoles().equals("Employe")) {
-                root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/conge/EmployeViewFXML.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/conge/EmployeViewFXML.fxml"));
             } else {
-                root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/conge/CongeViewFXML.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/conge/CongeViewFXML.fxml"));
             }
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) WelcomeName.getScene().getWindow();
             stage.setScene(c);
@@ -188,9 +188,9 @@ public class MainDashboardController implements Initializable {
     private void redirectToUpdate() {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/ModifierUser.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/ModifierUser.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) buttonrec.getScene().getWindow();
             stage.setScene(c);
@@ -208,9 +208,9 @@ public class MainDashboardController implements Initializable {
         Config.setUserStatic(null);
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/LandingPage.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/LandingPage.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) buttonrec.getScene().getWindow();
             stage.setScene(c);

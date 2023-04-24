@@ -18,7 +18,7 @@ import COM.HRSTORMDESKTOP.models.user.User;
 
 /**
  *
- * @author Achref
+ * @author Moetez
  */
 public class ResetPasswordMail {
     public static void sendMail(User u) throws Exception {

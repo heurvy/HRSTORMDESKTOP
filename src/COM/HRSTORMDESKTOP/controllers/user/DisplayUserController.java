@@ -37,7 +37,7 @@ import COM.HRSTORMDESKTOP.services.user.ImpServiceUser;
 /**
  * FXML Controller class
  *
- * @author Achref
+ * @author Moetez
  */
 public class DisplayUserController implements Initializable {
 
@@ -47,8 +47,6 @@ public class DisplayUserController implements Initializable {
     private TableColumn<String, User> Nom;
     @FXML
     private TableColumn<String, User> Prenom;
-    @FXML
-    private TableColumn<String, User> Password;
     @FXML
     private TableColumn<Date, User> Nomsociete;
     @FXML
@@ -290,9 +288,9 @@ public class DisplayUserController implements Initializable {
     private void redirectHome(MouseEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/MainDashboard.fxml"));
+            root = FXMLLoader.load(getClass().getResource("HRSTORMDESKTOP/views/user/MainDashboard.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) ListDisplay.getScene().getWindow();
             stage.setScene(c);
@@ -305,9 +303,9 @@ public class DisplayUserController implements Initializable {
     private void redirectAjoutUser(MouseEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/AjoutUser.fxml"));
+            root = FXMLLoader.load(getClass().getResource("HRSTORMDESKTOP/views/user/AjoutUser.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) ListDisplay.getScene().getWindow();
             stage.setScene(c);

@@ -25,7 +25,7 @@ import javafx.stage.Stage;
 public class LandingPageController implements Initializable {
 
     /*@FXML
-    private Button purchase;*/
+    private Button chat;*/
     @FXML
     private Button signin;
 
@@ -37,8 +37,8 @@ public class LandingPageController implements Initializable {
         // TODO
     }    
 
- /*   @FXML
-    private void RedirectToPurchase(ActionEvent event) {
+   /* @FXML
+    private void RedirectToChat(ActionEvent event) {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/user/AchatPack.fxml"));

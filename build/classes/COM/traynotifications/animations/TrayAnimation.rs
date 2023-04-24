@@ -1,1 +1,0 @@
-com.traynotifications.animations.TrayAnimation

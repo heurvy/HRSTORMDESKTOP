@@ -29,7 +29,7 @@ import COM.HRSTORMDESKTOP.utils.PasswordEncryption;
 /**
  * FXML Controller class
  *
- * @author Achref
+ * @author Moetez
  */
 public class ResetPasswordController implements Initializable {
 

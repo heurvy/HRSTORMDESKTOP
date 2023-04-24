@@ -55,7 +55,7 @@
             <TextField fx:id="Email" layoutX="256.0" layoutY="576.0" prefHeight="25.0" prefWidth="193.0" promptText="Email" />
             <TextField fx:id="password" layoutX="256.0" layoutY="627.0" prefHeight="25.0" prefWidth="193.0" promptText="Mot de passe" />
             <Button fx:id="imageUpload" layoutX="629.0" layoutY="209.0" mnemonicParsing="false" onAction="#PhotoImportation" prefHeight="25.0" prefWidth="250.0" text="Choisissez une photo" />
-            <Button fx:id="DocumentLegit" layoutX="629.0" layoutY="283.0" mnemonicParsing="false" onAction="#DocumentImportation" prefHeight="25.0" prefWidth="250.0" text="Importer document légitime" />
+            <Button fx:id="DocumentLegit" layoutX="629.0" layoutY="283.0" mnemonicParsing="false" onAction="#DocumentImportation" prefHeight="25.0" prefWidth="250.0" text="Importer document" />
             <Separator layoutX="629.0" layoutY="576.0" prefHeight="25.0" prefWidth="250.0" />
             <Button fx:id="Modifier" layoutX="711.0" layoutY="627.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #3166f7;" text="Modifier" textFill="#f8f8f8" />
             <Text fx:id="NameLabel" fill="#2e78bf" layoutX="255.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="286.0000013336539">

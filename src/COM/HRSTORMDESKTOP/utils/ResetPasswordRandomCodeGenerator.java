@@ -12,7 +12,7 @@ import java.util.Random;
 
 /**
  *
- * @author Achref
+ * @author Moetez
  */
 public class ResetPasswordRandomCodeGenerator {
 
