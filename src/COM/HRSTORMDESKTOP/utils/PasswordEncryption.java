@@ -47,13 +47,10 @@ public class PasswordEncryption implements IPasswordEncryption {
     }
 
     @Override
-    public boolean Verify(String password, String salt, String hashed) {
-        String regeneratedPassowrdToVerify = Encrypt(password, salt);
-        System.out.println(hashed);
-        System.out.println(regeneratedPassowrdToVerify);
-
-        return regeneratedPassowrdToVerify.equals(hashed);
-    }
+public boolean Verify(String password, String salt, String hashed) {
+    String regeneratedPasswordToVerify = Encrypt(password, salt);
+    return hashed.equals(regeneratedPasswordToVerify);
+}
 
     @Override
     public String getSalt() throws NoSuchAlgorithmException, NoSuchProviderException {

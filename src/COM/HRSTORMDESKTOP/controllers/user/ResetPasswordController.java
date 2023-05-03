@@ -95,9 +95,9 @@ public class ResetPasswordController implements Initializable {
     private void redirectToLogin() {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/Login.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/Login.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("/COM/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) VerifCode.getScene().getWindow();
             stage.setScene(c);

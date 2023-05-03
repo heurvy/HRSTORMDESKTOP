@@ -139,9 +139,10 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "prenom=" + prenom + "roles=" + roles + ", email=" + email + ", nom=" + nom + ", password=" + password + ", nomsociete=" + nomsociete + ", is_verified=" + is_verified + '}';
+        return "User{" + "id=" + id + ", prenom=" + prenom + ", roles=" + roles + ", email=" + email + ", nom=" + nom + ", password=" + password + ", nomsociete=" + nomsociete + ", is_verified=" + is_verified + '}';
     }
-    
+
+
  
 }
 

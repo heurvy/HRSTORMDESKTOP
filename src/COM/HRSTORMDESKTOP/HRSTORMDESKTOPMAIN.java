@@ -19,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+
 /**
  *
  * @author 21627
@@ -33,13 +34,13 @@ public class HRSTORMDESKTOPMAIN extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("views/user/LandingPage.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("views/user/MainDashboard.fxml"));
             // Parent root=FXMLLoader.load(getClass().getResource("views/recrutement/CampagneRecrutement.fxml"));
             //Parent root=FXMLLoader.load(getClass().getResource("views/recrutement/ListCandidature.fxml"));
             Scene c = new Scene(root);
             c.getStylesheets().add("bootstrap.css");
             primaryStage.setTitle("HRSTORM");
-            Image icon = new Image(getClass().getResourceAsStream("HR1.png"));
+            Image icon = new Image(getClass().getResourceAsStream("views/user/HR1.png"));
             primaryStage.getIcons().add(icon);
             primaryStage.setScene(c);
             this.stage = primaryStage;

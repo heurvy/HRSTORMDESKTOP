@@ -92,7 +92,7 @@ public  class AjoutUserController implements Initializable {
                     String passwordHashed = pe.Encrypt(password.getText(), salt);
                     UserManagedAdd.setPrenom(Prenom.getText());
                     UserManagedAdd.setNom(Nom.getText());
-                    UserManagedAdd.setEmail(Nomsociete.getText());
+                    UserManagedAdd.setNomsociete(Nomsociete.getText());
                     UserManagedAdd.setRoles("HREMPLOYE");
                     UserManagedAdd.setEmail(Email.getText());
                     UserManagedAdd.setPassword(passwordHashed);
@@ -157,7 +157,7 @@ public  class AjoutUserController implements Initializable {
     private void redirectHome(MouseEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/MainDashboard.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/MainDashboard.fxml"));
             Scene c = new Scene(root);
             c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
@@ -171,7 +171,7 @@ public  class AjoutUserController implements Initializable {
     private void redirectToDisplayUser(MouseEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/DisplayUser.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/DisplayUser.fxml"));
             Scene c = new Scene(root);
             c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 

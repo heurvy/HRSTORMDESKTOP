@@ -3,23 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/services/user/IServiceUser.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/HRSTORMDESKTOP.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/Config.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/client/chatwindow/ChatController.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/models/user/User.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/utils/ResetPasswordMail.java</file>
+            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/controllers/recrutement/ListRecrutmentResFXMLController.java</file>
+            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/controllers/recrutement/ListRecrutmentCondFXMLController.java</file>
+            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/controllers/recrutement/ResponsableFXMLController.java</file>
+            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/controllers/Evaluation/Dashboard.java</file>
             <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/controllers/user/LoginController.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/client/util/VoiceRecorder.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/utils/ResetPasswordRandomCodeGenerator.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/infrastructure/IService.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/controllers/user/DisplayUserController.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/client/login/MainLauncher.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/services/user/ImpServiceUser.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/models/recrutement/Recrutement.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/controllers/user/AjoutUserController.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/client/chatwindow/Listener.java</file>
-            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/utils/IPasswordEncryption.java</file>
+            <file>file:/D:/emulator/HRSTORMDESKTOP/src/COM/HRSTORMDESKTOP/controllers/user/LandingPageController.java</file>
         </group>
     </open-files>
 </project-private>

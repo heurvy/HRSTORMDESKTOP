@@ -257,7 +257,7 @@ public class DisplayUserController implements Initializable {
     private void reloadPage() {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("views/user/DisplayUser.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/DisplayUser.fxml"));
             Scene c = new Scene(root);
             c.getStylesheets().add("bootstrap.css");
 
@@ -271,7 +271,7 @@ public class DisplayUserController implements Initializable {
     private void redirectToUpdate() {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("views/user/ModifierUser.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/ModifierUser.fxml"));
             Scene c = new Scene(root);
             c.getStylesheets().add("bootstrap.css");
 

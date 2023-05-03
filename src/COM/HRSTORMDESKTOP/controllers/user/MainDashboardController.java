@@ -24,6 +24,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import COM.HRSTORMDESKTOP.Config;
 import COM.HRSTORMDESKTOP.services.user.ImpServiceUser;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -32,6 +33,9 @@ import COM.HRSTORMDESKTOP.services.user.ImpServiceUser;
  */
 public class MainDashboardController implements Initializable {
 
+       @FXML
+       
+    private ImageView BackButton;
     @FXML
     private Label WelcomeName;
     @FXML
@@ -41,13 +45,17 @@ public class MainDashboardController implements Initializable {
     @FXML
     private Rectangle buttonrec;
     @FXML
-    private Rectangle buttonfeuille;
+    private Rectangle ButtonPlanning;
+    @FXML
+    private Rectangle ButtonEval;
     @FXML
     private Label labeluser;
     @FXML
     private Label labelrec;
     @FXML
-    private Label labelfeuille;
+    private Label labelPlanning;
+        @FXML
+    private Label labelEval;
     @FXML
     private Rectangle buttonconge;
     @FXML
@@ -60,19 +68,17 @@ public class MainDashboardController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        WelcomeName.setText(Config.UserStatic.getNom());
+     /*   WelcomeName.setText(Config.UserStatic.getNom());
         if (Config.UserStatic.getRoles().equals("Employé")) {
             buttonrec.setOpacity(0);
             buttonrec.setDisable(true);
             labelrec.setOpacity(0);
             labelrec.setDisable(true);
             labeluser.setText("Réclamation");
-            /*
             labeluser.setOpacity(0);
             labeluser.setDisable(true);
             redirectUser.setOpacity(0);
-            redirectUser.setDisable(true);
-             */
+            redirectUser.setDisable(true);  
         }
         if (Config.UserStatic.getRoles().equals("Admin")) {
             buttonrec.setOpacity(0);
@@ -81,30 +87,43 @@ public class MainDashboardController implements Initializable {
             buttonfeuille.setOpacity(0);
             buttonconge.setOpacity(0);
             labelconge.setOpacity(0);
-
             buttonrec.setDisable(true);
             labelrec.setDisable(true);
             labelfeuille.setDisable(true);
             buttonfeuille.setDisable(true);
             buttonconge.setDisable(true);
             labelconge.setDisable(true);
-        }
-
+        }*/
+     
     }
+    
+    
 
+        @FXML
+    private void redirectToPlanning(MouseEvent event) {
+        Parent root;
+        try { 
+                root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/Planning/Back.fxml"));
+            Scene c = new Scene(root);
+            Stage stage = (Stage) ButtonPlanning.getScene().getWindow(); 
+            stage.setScene(c);
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
     @FXML
     private void redirectToUsers(MouseEvent event) {
         Parent root;
         try {
-            if (Config.UserStatic.getRoles().equals("Employé")) {
-                root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/AjoutReclamation.fxml"));
-            } else {
-                root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/DisplayUser.fxml"));
-            }
+            //if (Config.UserStatic.getRoles().equals("Employé")) {
+            //    root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/AjoutReclamation.fxml"));
+          //  } else {
+                root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/DisplayUser.fxml"));
+        //    }
             Scene c = new Scene(root);
             c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
-            Stage stage = (Stage) WelcomeName.getScene().getWindow();
+            Stage stage = (Stage) redirectUser.getScene().getWindow();
             stage.setScene(c);
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
@@ -115,7 +134,7 @@ public class MainDashboardController implements Initializable {
     private void redirectHome(MouseEvent event) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/MainDashboard.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/MainDashboard.fxml"));
             Scene c = new Scene(root);
             c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
@@ -127,15 +146,15 @@ public class MainDashboardController implements Initializable {
     }
 
     @FXML
-    private void redirectToFeuille(MouseEvent event) {
+    private void redirectToEval(MouseEvent event) {
         //Config.UserStatic.getNomPrenom()
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/feuilletemps/EvalViewFXML.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/Evaluation/Dashboard.fxml"));
             Scene c = new Scene(root);
             c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
-            Stage stage = (Stage) WelcomeName.getScene().getWindow();
+            Stage stage = (Stage) buttonconge.getScene().getWindow();
             stage.setScene(c);
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
@@ -147,11 +166,11 @@ public class MainDashboardController implements Initializable {
         Parent root;
         try {
             System.out.println("Campagne");
-            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/recrutement/CampagneRecrutement.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/recrutement/ResponsableFXML.fxml"));
             Scene c = new Scene(root);
             c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
 
-            Stage stage = (Stage) WelcomeName.getScene().getWindow();
+            Stage stage = (Stage) labelrec.getScene().getWindow();
             stage.setScene(c);
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
@@ -164,15 +183,15 @@ public class MainDashboardController implements Initializable {
                 Parent root;
 
         try {
-            if (Config.UserStatic.getRoles().equals("Employe")) {
-                root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/conge/EmployeViewFXML.fxml"));
-            } else {
-                root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/conge/CongeViewFXML.fxml"));
-            }
+         //   if (Config.UserStatic.getRoles().equals("Employe")) {
+             //   root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/conge/EmployeViewFXML.fxml"));
+          //  } else {
+                root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/conge/Dashboard.fxml"));
+        //}
             Scene c = new Scene(root);
-            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
+            c.getStylesheets().add("/COM/HRSTORMDESKTOP/bootstrap.css");
 
-            Stage stage = (Stage) WelcomeName.getScene().getWindow();
+            Stage stage = (Stage) buttonconge.getScene().getWindow();
             stage.setScene(c);
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
@@ -208,9 +227,9 @@ public class MainDashboardController implements Initializable {
         Config.setUserStatic(null);
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/LandingPage.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/LandingPage.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
+            c.getStylesheets().add("/COM/HRSTORMDESKTOP/bootstrap.css");
 
             Stage stage = (Stage) buttonrec.getScene().getWindow();
             stage.setScene(c);

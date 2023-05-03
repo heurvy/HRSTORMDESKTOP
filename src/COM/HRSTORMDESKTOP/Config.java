@@ -14,7 +14,7 @@ import COM.HRSTORMDESKTOP.models.user.User;
  * @author 21623
  */
 public  class  Config {
-    private static final String url="jdbc:mysql://localhost:3306/";
+    private static final String url="jdbc:mysql://localhost:3306/pidev";
     private static final String user = "root";
     private static final String password = "";
     private static final String Mail= "HRSTORM@gmail.com";

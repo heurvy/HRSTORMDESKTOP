@@ -54,7 +54,7 @@ public class ImpServiceUser implements IServiceUser {
 
     @Override
     public User Add(User entity) {
-        String req = "INSERT INTO `User` (`email`, `roles` ,"
+        String req = "INSERT INTO `user` (`email`, `roles` ,"
                 + "`password` , `is_verified` , `nom` , "
                 + "` `prenom` , `nomsociete`, )"
                 + "VALUES ( ? , ? , ? , 1 , ? , ? , ? ) ";
@@ -80,7 +80,7 @@ public class ImpServiceUser implements IServiceUser {
 
     @Override
     public void Delete(User entity) {
-        String req = "DELETE FROM `User` WHERE `IdUser` = ?";
+        String req = "DELETE FROM `user` WHERE `IdUser` = ?";
         try {
 
             pst = dbcon.prepareStatement(req);
@@ -95,7 +95,7 @@ public class ImpServiceUser implements IServiceUser {
 
     @Override
     public void Update(User entity) {
-        String req = "UPDATE `User` SET `email` = ? , `roles` = ?"
+        String req = "UPDATE `user` SET `email` = ? , `roles` = ?"
                 + " , `password` = ? ,  `is_verified` = 1 , `nom` = ? "
                 + " , `prenom` = ? , `nomsociete` = ? "
                 + " WHERE `IdUser` = ?";
@@ -121,7 +121,7 @@ public class ImpServiceUser implements IServiceUser {
     public List<User> Getall() {
         List<User> users = new ArrayList<>();
 
-        String req = "SELECT * from `User`";
+        String req = "SELECT * from `user`";
 
         try {
             pst = dbcon.prepareStatement(req);
@@ -148,7 +148,7 @@ public class ImpServiceUser implements IServiceUser {
 
     @Override
     public User GetById(int ID) {
-        String req = "SELECT * from `User` WHERE `IdUser` = ?";
+        String req = "SELECT * from `user` WHERE `IdUser` = ?";
         try {
             pst = dbcon.prepareStatement(req);
             pst.setInt(1, ID);
@@ -175,7 +175,7 @@ public class ImpServiceUser implements IServiceUser {
 
     public List<User> GetByNomSociete(User u) {
         List<User> users = new ArrayList<>();
-        String req = "SELECT * from `User` WHERE `nomsociete` = ?";
+        String req = "SELECT * from `user` WHERE `nomsociete` = ?";
         try {
             pst = dbcon.prepareStatement(req);
             pst.setString(8,req);
@@ -202,7 +202,7 @@ public class ImpServiceUser implements IServiceUser {
     @Override
     public List<User> GetResponsables(User u) {
         List<User> users = new ArrayList<>();
-        String req = "SELECT * from `User` WHERE `Roles` = HRRESPONSABLE";
+        String req = "SELECT * from `user` WHERE `Roles` = HRRESPONSABLE";
         try {
             pst = dbcon.prepareStatement(req);
             pst.setString(3, req);
@@ -250,7 +250,7 @@ public class ImpServiceUser implements IServiceUser {
     @Override
     public List<User> GetByName(String nom) {
         List<User> users = new ArrayList<>();
-        String req = "SELECT * from `User` WHERE `nom` = ? ";
+        String req = "SELECT * from `user` WHERE `nom` = ? ";
         try {
             pst = dbcon.prepareStatement(req);
             pst.setString(7, nom);
@@ -277,7 +277,7 @@ public class ImpServiceUser implements IServiceUser {
     public List<User> SortByName() {
         List<User> users = new ArrayList<>();
 
-        String req = "SELECT * from `User` ORDER BY `nom`";
+        String req = "SELECT * from `user` ORDER BY `nom`";
 
         try {
             pst = dbcon.prepareStatement(req);
@@ -303,9 +303,10 @@ public class ImpServiceUser implements IServiceUser {
 
     @Override
     public User Login(String email, String password) {
-        String req = "SELECT * from `User` WHERE `email` = ? ";
+    String req = "SELECT * from `User` WHERE `Email` = ? ";
         PasswordEncryption pe = new PasswordEncryption();
         User u = new User();
+        String Fal = null;
         try {
             pst = dbcon.prepareStatement(req);
 
@@ -316,20 +317,27 @@ public class ImpServiceUser implements IServiceUser {
 
             if (rs.getRow() != 0) {
 
-                u.setEmail(rs.getString(1));
+                u.setEmail(rs.getString(2)); 
+                pe.Encrypt(password, Fal);
 
-                if (pe.Verify(password, rs.getString(4),rs.getString(4) )) {
+                if (Fal==rs.getString(4)) {
                 u.setId(rs.getInt(1));
                 u.setEmail(rs.getString(2));
                 u.setRoles(rs.getString(3));
                 u.setPassword(rs.getString(4));
                 u.setIs_verified(rs.getBoolean(5));
-                u.setPrenom(rs.getString(6));
+                u.setPrenom(rs.getString(7));
+                u.setNom(rs.getString(6));
                 u.setNomsociete(rs.getString(8));
+                    System.out.println("blinta");
+                                System.out.println(u);
+                                                            System.out.println(Fal);                
+
                 }
 
             }
             return u;
+
 
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -338,9 +346,14 @@ public class ImpServiceUser implements IServiceUser {
 
     }
 
+
+//        return "User{" + "id=" + id + ", prenom=" + prenom + ", roles=" + roles + ", email=" + email + ", nom=" + nom + ", password=" + password + ", nomsociete=" + nomsociete + ", is_verified=" + is_verified + '}';
+
+    
+
 /*    @Override
     public void AddFromCSV(String filepath) {
-        String req = "INSERT INTO `User` (`NomPrenom`, `Adresse` ,"
+        String req = "INSERT INTO `user` (`NomPrenom`, `Adresse` ,"
                 + "`Cin` , `Role` , `DocumentLegit` , "
                 + "`DateNaissance` , `Email` , `PasswordHash`, "
                 + "`PasswordSalt` , `IsResponsable` , "
@@ -397,11 +410,11 @@ public class ImpServiceUser implements IServiceUser {
     } */
 
     @Override
-    public User GetByMail(String Email) {
-        String req = "SELECT * from `User` WHERE `email` = ?";
+    public User GetByMail(String email) {
+        String req = "SELECT * from `user` WHERE `email` =?";
         try {
             pst = dbcon.prepareStatement(req);
-            pst.setString(1, Email);
+            pst.setString(1, email);
             ResultSet rs = pst.executeQuery();
 
             User u = new User();
@@ -417,7 +430,7 @@ public class ImpServiceUser implements IServiceUser {
     }
 
     public User GetByprenom(String prenom)   {
-        String req = "SELECT * from `User` WHERE `prenom` = ";
+        String req = "SELECT * from `user` WHERE `prenom` = ";
         try {
             pst = dbcon.prepareStatement(req);
             pst.setString(6, prenom);

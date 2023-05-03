@@ -33,6 +33,7 @@ import COM.HRSTORMDESKTOP.Config;
 import COM.HRSTORMDESKTOP.models.user.User;
 import COM.HRSTORMDESKTOP.services.user.ImpServiceUser;
 import COM.HRSTORMDESKTOP.utils.ResetPasswordMail;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -41,6 +42,10 @@ import COM.HRSTORMDESKTOP.utils.ResetPasswordMail;
  */
 public class LoginController implements Initializable {
 
+
+    @FXML
+    private ImageView BackButton;
+    
     @FXML
     private TextField EmailInput;
     @FXML
@@ -60,6 +65,7 @@ public class LoginController implements Initializable {
         ImpServiceUser su = new ImpServiceUser();
         User u = new User();
         u = su.Login(EmailInput.getText(), PasswordInput.getText());
+        System.out.println(u);
         if (u.getId() == 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -98,11 +104,11 @@ public class LoginController implements Initializable {
        // }
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/MainDashboard.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/MainDashboard.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("bootstrap.css");
 
-            Stage stage = (Stage) EmailInput.getScene().getWindow();
+            Stage stage = (Stage) LoginButton.getScene().getWindow();
             stage.setScene(c);
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
@@ -113,26 +119,42 @@ public class LoginController implements Initializable {
     private void redirectToResetPassword() {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/masterhrdesktopv2/views/user/ResetPassword.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/ResetPassword.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/masterhrdesktopv2/bootstrap.css");
+            c.getStylesheets().add("bootstrap.css");
 
-            Stage stage = (Stage) EmailInput.getScene().getWindow();
+            Stage stage = (Stage) LoginButton.getScene().getWindow();
             stage.setScene(c);
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
         }
     }
 
+        @FXML
+    void OnRedirectBack(MouseEvent event) {
+
+            Parent root;
+
+        try { 
+                root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/LandingPage.fxml"));
+            Scene c = new Scene(root);
+            Stage stage = (Stage) BackButton.getScene().getWindow(); 
+            stage.setScene(c);
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
     @FXML
     private void redirectToLandingPage(MouseEvent event) {
         Parent root;
+        
         try {
-            root = FXMLLoader.load(getClass().getResource("/HRSTORMDESKTOP/views/user/LandingPage.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/COM/HRSTORMDESKTOP/views/user/LandingPage.fxml"));
             Scene c = new Scene(root);
-            c.getStylesheets().add("/HRSTORMDESKTOP/bootstrap.css");
+            c.getStylesheets().add("/COM/HRSTORMDESKTOP/bootstrap.css");
 
-            Stage stage = (Stage) EmailInput.getScene().getWindow();
+            
+            Stage stage = (Stage) BackButton.getScene().getWindow();
             stage.setScene(c);
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
